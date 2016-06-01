@@ -1,4 +1,4 @@
-ualbertabot-master.zip *.sdf
+*.sdf
 *.suo
 *.opensdf
 *.user
@@ -10,4 +10,3 @@ UAlbertaBot/UAB_ErrorLog.txt
 *.pd_
 UAlbertaBot/UAB_ErrorLog.txt
 BOSS/VisualStudio/BOSS.VC.db
-ualbertabot-master.zip
