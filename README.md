@@ -1,7 +1,10 @@
-UAlbertaBot - StarCraft AI Competition Bot
+ISTBot
 
-Author:  David Churchill (dave.churchill@gmail.com)
+This bot is being created with the purpose of developing a counter strategy algorithm.
 
-Please check out the [Wiki](https://github.com/davechurchill/ualbertabot/wiki) for full instructions and documentation!
+To check UAlbertaBot or BroodwarBotQ, which are part of the agent I'm here creating please visit the correct repositories:
 
-Please consider the code in this repository as unstable research code. Stable releases can be found in the [stable release section](https://github.com/davechurchill/ualbertabot/tree/master/binary_stable_releases). Note that the instructions included in the wiki may not be correct for older binary releases.
+UAlbertaBot: "https://github.com/davechurchill/ualbertabot"
+BroodwarBotQ: "https://github.com/syhw/BroodwarBotQ"
+
+UAlbertaBot is the starting point of this agent and BroodwarBotQ's prediction algorithm is used as a basis for the counter strategies algorithm
