@@ -7,6 +7,8 @@ ProductionManager::ProductionManager()
 	, _haveLocationForThisBuilding   (false)
 	, _enemyCloakedDetected          (false)
 {
+	// call estimator constructor
+	counterStrategy = false;
     setBuildOrder(StrategyManager::Instance().getOpeningBookBuildOrder());
 }
 
@@ -20,8 +22,16 @@ void ProductionManager::setBuildOrder(const BuildOrder & buildOrder)
 	}
 }
 
+
+//TO-DO
+//INSERT PREDICTION CODE HERE, CALCULATE COUNTER AND START BUILD ORDER SEARCH AFTERWARDS
 void ProductionManager::performBuildOrderSearch()
 {	
+	if (counterStrategy){
+		calculateNewStrategy();
+		return;
+	}
+
     if (!Config::Modules::UsingBuildOrderSearch || !canPlanBuildOrderNow())
     {
         return;
@@ -41,6 +51,16 @@ void ProductionManager::performBuildOrderSearch()
 			BOSSManager::Instance().startNewSearch(StrategyManager::Instance().getBuildOrderGoal());
         }
     }
+}
+
+void ProductionManager::calculateNewStrategy(){
+	//call etech estimator - 
+	// remake useDestributed openings
+		//check if new units seen
+			//if true - recalculate prediction
+	// if prediction was recalculated
+		//calculate new build order
+
 }
 
 void ProductionManager::update() 

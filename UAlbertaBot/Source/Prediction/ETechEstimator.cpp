@@ -1,10 +1,10 @@
-#include <PrecompiledHeader.h>
-#include "Intelligence/ETechEstimator.h"	
+#include "PrecompiledHeader.h"
+#include "ETechEstimator.h"	
 #include "enums_name_tables_tt.h"
-#include "Macro/Producer.h"
-#include "Macro/Builder.h"
-#include "Intelligence/Intelligence.h"
-#include "Macro/Macro.h"
+//#include "Macro/Producer.h"
+//#include "Macro/Builder.h"
+//#include "Intelligence/Intelligence.h"
+//#include "Macro/Macro.h"
 #include "Utils/Util.h"
 
 #define LEARNED_TIME_LIMIT 1080 // 18 minutes
@@ -37,42 +37,43 @@ ETechEstimator::ETechEstimator()
 	/// All code for the learning is here: https://github.com/SnippyHolloW/OpeningTech
 	{
 		// do __NOT__ use Intelligence::Instance().enemyRace otherwise infinite constructors loop and stack overflow and carnage ensues
-		Race enemyRace;
-		for (set<Player*>::const_iterator p = Broodwar->getPlayers().begin();
-			p != Broodwar->getPlayers().end(); ++p)
+		Race enemyRace = Broodwar->enemy()->getRace();
+		Broodwar->enemy()->getRace();
+		/*for (set<Player*>::const_iterator p = Broodwar->getPlayers().begin();
+			p != Broodwar->getPlayers().end(); p++)
 		{
 			if (!(*p)->isNeutral() && (*p)->isEnemy(Broodwar->self()))
 			{
-				enemyRace = (*p)->getRace();
+				enemyRace = (**p)->getRace();
 				break;
 			}
-		}
+		}*/
 		string serializedTablesFileName("bwapi-data/AI/tables/");
 		//string serializedTablesFileName("C:\\StarCraft\\AI\\BroodwarBotQ\\data\\tables\\");
 		if (enemyRace == Races::Terran || !enemyRace.getName().compare("Terran"))
 		{
 #ifdef __BENS_LABELS__
-			serializedTablesFileName.append("TvP.table");
+			serializedTablesFileName.append("TvZ.table");
 #else
-			serializedTablesFileName.append("TvPx.table");
+			serializedTablesFileName.append("TvZx.table");
 #endif
 			loadTable(serializedTablesFileName.c_str());
 		}
 		else if (enemyRace == Races::Protoss || !enemyRace.getName().compare("Protoss"))
 		{
 #ifdef __BENS_LABELS__
-			serializedTablesFileName.append("PvP.table");
+			serializedTablesFileName.append("PvZ.table");
 #else
-			serializedTablesFileName.append("PvPx.table");
+			serializedTablesFileName.append("PvZx.table");
 #endif
 			loadTable(serializedTablesFileName.c_str());
 		}
 		else if (enemyRace == Races::Zerg || !enemyRace.getName().compare("Zerg"))
 		{
 #ifdef __BENS_LABELS__
-			serializedTablesFileName.append("ZvP.table");
+			serializedTablesFileName.append("ZvZ.table");
 #else
-			serializedTablesFileName.append("ZvPx.table");
+			serializedTablesFileName.append("ZvZx.table");
 #endif
 			loadTable(serializedTablesFileName.c_str());
 		}
@@ -81,13 +82,13 @@ ETechEstimator::ETechEstimator()
 			string tmpTvP(serializedTablesFileName);
 			string tmpZvP(serializedTablesFileName);
 #ifdef __BENS_LABELS__
-			serializedTablesFileName.append("PvP.table");
-			tmpTvP.append("TvP.table");
-			tmpZvP.append("ZvP.table");
+			serializedTablesFileName.append("PvZ.table");
+			tmpTvP.append("TvZ.table");
+			tmpZvP.append("ZvZ.table");
 #else
-			serializedTablesFileName.append("PvPx.table");
-			tmpTvP.append("TvPx.table");
-			tmpZvP.append("ZvPx.table");
+			serializedTablesFileName.append("PvZx.table");
+			tmpTvP.append("TvZx.table");
+			tmpZvP.append("ZvZx.table");
 #endif
 			ifstream ifs(serializedTablesFileName.c_str());
 			boost::archive::text_iarchive ia(ifs);
@@ -208,24 +209,24 @@ void ETechEstimator::onUnitDestroy(Unit* u)
 void ETechEstimator::onUnitShow(Unit* u)
 {
 	if (Broodwar->getFrameCount()/24 >= LEARNED_TIME_LIMIT
-		|| u->getPlayer()->isNeutral())
+		|| (*u)->getPlayer()->isNeutral())
 		return;
 
-	if (u->getPlayer()->isEnemy(Broodwar->self())
-		&& !alreadySaw(u->getType()))
+	if ((*u)->getPlayer()->isEnemy(Broodwar->self())
+		&& !alreadySaw((*u)->getType()))
 	{
 		/// If it's the first enemy unit that we see and he is random,
 		/// update st with the good serialized_table
 		if (!tableLoaded)
 		{
-			if (u->getType().getRace() == Races::Terran)
+			if ((*u)->getType().getRace() == Races::Terran)
 			{
 				st.swap(TvP);
 				op_prior.swap(op_prior_TvP);
 				size_t nbOpenings = st.openings.size();
 				openingsProbas = vector<long double>(nbOpenings, 1.0 / nbOpenings);
 			}
-			else if (u->getType().getRace() == Races::Zerg)
+			else if ((*u)->getType().getRace() == Races::Zerg)
 			{
 				st.swap(ZvP);
 				op_prior.swap(op_prior_ZvP);
@@ -236,30 +237,30 @@ void ETechEstimator::onUnitShow(Unit* u)
 		}
 
 		int recomputeTime = 0;
-		if (u->getType().isBuilding() 
-			|| u->getType() == UnitTypes::Zerg_Overlord)
+		if ((*u)->getType().isBuilding()
+			|| (*u)->getType() == UnitTypes::Zerg_Overlord)
 		{
 			/// We are interested in the time at which the construction began
 			if (insertBuilding(u))
 			{
-				if (u->isCompleted())
-					recomputeTime = (Broodwar->getFrameCount() - u->getType().buildTime()) / 24;
+				if ((*u)->isCompleted())
+					recomputeTime = (Broodwar->getFrameCount() - (*u)->getType().buildTime()) / 24;
 				else
-					recomputeTime = (Broodwar->getFrameCount() - (u->getType().buildTime() - u->getRemainingBuildTime())) / 24;
+					recomputeTime = (Broodwar->getFrameCount() - ((*u)->getType().buildTime() - (*u)->getRemainingBuildTime())) / 24;
 			}
 		} else {
 			/// We infer the buildings needed to produce this unit
-			for (map<UnitType, int>::const_iterator it = u->getType().requiredUnits().begin();
-				it != u->getType().requiredUnits().end(); ++it)
+			for (map<UnitType, int>::const_iterator it = (*u)->getType().requiredUnits().begin();
+				it != (*u)->getType().requiredUnits().end(); ++it)
 			{
 				if (insertBuilding(it->first))
 				{
 					/// The later he could have built this building
 					int tmpTime = (Broodwar->getFrameCount()
 						- (it->first.buildTime()
-						- u->getType().buildTime() // minimum build time
+						- (*u)->getType().buildTime() // minimum build time
 						//+ u->getDistance(enemyStart, u->getPosition()) / u->getType().topSpeed() // minimum walking distance done next line (approx.)
-						- static_cast<int>(((Broodwar->mapWidth() + Broodwar->mapHeight())/2.0 * TILE_SIZE) / u->getType().topSpeed())
+						- static_cast<int>(((Broodwar->mapWidth() + Broodwar->mapHeight()) / 2.0 * TILE_SIZE) / (*u)->getType().topSpeed())
 						)) / 24;
 					if (!recomputeTime || tmpTime < recomputeTime) // we do only one recompute (the final) instead of many, for each buildings
 						recomputeTime = tmpTime;
@@ -269,7 +270,7 @@ void ETechEstimator::onUnitShow(Unit* u)
 		if (recomputeTime)
 		{
 			computeDistribOpenings(recomputeTime);
-			useDistribOpenings(__ETECHESTIMATOR_MINUTES__*60);
+			//useDistribOpenings(__ETECHESTIMATOR_MINUTES__*60);
 		}
 	}
 }
@@ -405,7 +406,7 @@ bool ETechEstimator::insertBuilding(UnitType ut)
 
 bool ETechEstimator::insertBuilding(Unit* u)
 {
-	UnitType ut = u->getType();
+	UnitType ut = (*u)->getType();
 	size_t previous_size = buildingsTypesSeen.size();
 	if (ut.getRace() == Races::Protoss)
 	{
@@ -689,13 +690,15 @@ bool ETechEstimator::testBuildTreePossible(int indBuildTree, const set<int>& set
 /// TODO: move all that in appropriate methods for specific
 /// "reactions to some opening/strat/tactic" in the relevant managers
 /// (Bullshit talk (c))
+/*
 void ETechEstimator::useDistribOpenings(int time)
 {
 	if (time + Broodwar->getFrameCount()/24 >= LEARNED_TIME_LIMIT
 		|| Broodwar->self()->supplyUsed() < 42) // hack not to disturb the initial BO
 		return;
 	/// here we should now for sure the enemy's race as we have seen at least a building;
-	Race enemyRace = Intelligence::Instance().enemyRace;
+	//Race enemyRace = Intelligence::Instance().enemyRace;
+	Race enemyRace = Broodwar->enemy()->getRace();
 
 	vector<long double> tmpOpProb(openingsProbas); 
 	if (time > 0)
@@ -713,10 +716,6 @@ void ETechEstimator::useDistribOpenings(int time)
 		if (fearThese.count(3)) // vultures
 #endif
 		{
-			/*TheProducer->produce(2, UnitTypes::Protoss_Observer, (int)(tmpOpProb[2]*100));
-#ifdef __INTELLIGENCE_DEBUG__
-			Broodwar->printf("Producing observers bc of Vultures");
-#endif      */
 		}
 #ifdef __BENS_LABELS__
 		else if (fearThese.count(3)) // SiegeExpand
@@ -882,7 +881,7 @@ void ETechEstimator::useDistribOpenings(int time)
 			Macro::Instance().stormFirst = true;
 	}
 }
-
+*/
 const vector<long double>& ETechEstimator::getOpeningsProbas() const
 {
 	return openingsProbas;

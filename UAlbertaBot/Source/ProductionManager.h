@@ -20,6 +20,7 @@ class ProductionManager
     bool                _enemyCloakedDetected;
     bool                _assignedWorkerForThisBuilding;
     bool                _haveLocationForThisBuilding;
+	bool				counterStrategy;
     
     BWAPI::Unit         getClosestUnitToPosition(const BWAPI::Unitset & units,BWAPI::Position closestTo);
     BWAPI::Unit         selectUnitOfType(BWAPI::UnitType type,BWAPI::Position closestTo = BWAPI::Position(0,0));
@@ -30,7 +31,8 @@ class ProductionManager
     bool                meetsReservedResources(MetaType type);
     void                setBuildOrder(const BuildOrder & buildOrder);
     void                create(BWAPI::Unit producer,BuildOrderItem & item);
-    void                manageBuildOrderQueue();
+	void                manageBuildOrderQueue();
+	void                calculateNewStrategy();
     void                performCommand(BWAPI::UnitCommandType t);
     bool                canMakeNow(BWAPI::Unit producer,MetaType t);
     void                predictWorkerMovement(const Building & b);

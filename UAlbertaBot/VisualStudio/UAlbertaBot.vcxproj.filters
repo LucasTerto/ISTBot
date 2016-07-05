@@ -34,6 +34,12 @@
     <Filter Include="util">
       <UniqueIdentifier>{59599488-4576-44ab-8522-7d65a6425e15}</UniqueIdentifier>
     </Filter>
+    <Filter Include="game\macro\Prediction">
+      <UniqueIdentifier>{632449f7-f227-4dae-b6b0-dcbec081e661}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\macro\Prediction\Utils">
+      <UniqueIdentifier>{6224aa34-28be-4e65-838f-29d6f803dd70}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\CombatCommander.cpp">
@@ -152,6 +158,12 @@
     </ClCompile>
     <ClCompile Include="..\Source\Logger.cpp">
       <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Prediction\ETechEstimator.cpp">
+      <Filter>game\macro\Prediction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Prediction\Utils\Util.cpp">
+      <Filter>game\macro\Prediction\Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -275,5 +287,54 @@
     <ClInclude Include="..\Source\Logger.h">
       <Filter>util</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="..\Source\Prediction\Defines.h">
+      <Filter>game\macro\Prediction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Prediction\enums_name_tables_tt.h">
+      <Filter>game\macro\Prediction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Prediction\PrecompiledHeader.h">
+      <Filter>game\macro\Prediction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Prediction\serialized_tables.h">
+      <Filter>game\macro\Prediction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Prediction\ETechEstimator.h">
+      <Filter>game\macro\Prediction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Prediction\Utils\CSingleton.h">
+      <Filter>game\macro\Prediction\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Prediction\Utils\MinHeap.h">
+      <Filter>game\macro\Prediction\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Prediction\Utils\Nearby.h">
+      <Filter>game\macro\Prediction\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Prediction\Utils\QuadTree.h">
+      <Filter>game\macro\Prediction\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Prediction\Utils\Rainbow.h">
+      <Filter>game\macro\Prediction\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Prediction\Utils\RandomGenerators.h">
+      <Filter>game\macro\Prediction\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Prediction\Utils\RectangleArray.h">
+      <Filter>game\macro\Prediction\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Prediction\Utils\TimeManaged.h">
+      <Filter>game\macro\Prediction\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Prediction\Utils\Util.h">
+      <Filter>game\macro\Prediction\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Prediction\Utils\Vec.h">
+      <Filter>game\macro\Prediction\Utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UAlbertaBot.rc" />
   </ItemGroup>
 </Project>

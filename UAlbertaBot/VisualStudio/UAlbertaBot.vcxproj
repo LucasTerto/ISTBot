@@ -20,7 +20,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>false</UseOfMfc>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>NotSet</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
@@ -85,7 +85,7 @@
     <ClCompile>
       <Optimization>Full</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>../BOSS/source;../SparCraft/source;../source;$(BWAPI_DIR)/include;$(BWTA_DIR)/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../BOSS/source;../SparCraft/source;../source;$(BWAPI_DIR)/include;$(BWTA_DIR)/include;$(BOOST_DIR)/boost_1_61_0/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;EXAMPLEAIMODULE_EXPORTS;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -104,13 +104,14 @@
       <LinkLibraryDependencies>true</LinkLibraryDependencies>
     </ProjectReference>
     <Link>
-      <AdditionalDependencies>$(BWAPI_DIR)/lib/BWAPI.lib;$(Configuration)/SparCraft/SparCraft.lib;../../BOSS/bin/BOSS.lib;$(BWTA_DIR)/lib/BWTA.lib;$(BWTA_DIR)/lib/libboost_system-vc120-mt-1_56.lib;$(BWTA_DIR)/lib/libboost_thread-vc120-mt-1_56.lib;$(BWTA_DIR)/lib/libCGAL-vc120-mt-4.4.lib;$(BWTA_DIR)/lib/libgmp-10.lib;$(BWTA_DIR)/lib/libmpfr-4.lib;$(BWTA_DIR)/lib/libboost_filesystem-vc120-mt-1_56.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(BWAPI_DIR)/lib/BWAPI.lib;$(Configuration)/SparCraft/SparCraft.lib;../../BOSS/bin/BOSS.lib;$(BWTA_DIR)/lib/BWTA.lib;$(BWTA_DIR)/lib/libboost_system-vc120-mt-1_56.lib;$(BWTA_DIR)/lib/libboost_thread-vc120-mt-1_56.lib;$(BWTA_DIR)/lib/libCGAL-vc120-mt-4.4.lib;$(BWTA_DIR)/lib/libgmp-10.lib;$(BWTA_DIR)/lib/libmpfr-4.lib;$(BWTA_DIR)/lib/libboost_filesystem-vc120-mt-1_56.lib</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <TargetMachine>MachineX86</TargetMachine>
       <GenerateMapFile>true</GenerateMapFile>
+      <AdditionalLibraryDirectories>$(BWTA_DIR)/lib;$(BOOST_DIR)/boost_lib/lib;$(BOOST_DIR)/64/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -138,6 +139,8 @@
     <ClCompile Include="..\Source\Config.cpp" />
     <ClCompile Include="..\Source\Micro.cpp" />
     <ClCompile Include="..\Source\ParseUtils.cpp" />
+    <ClCompile Include="..\Source\Prediction\ETechEstimator.cpp" />
+    <ClCompile Include="..\Source\Prediction\Utils\Util.cpp" />
     <ClCompile Include="..\source\ProductionManager.cpp" />
     <ClCompile Include="..\source\RangedManager.cpp" />
     <ClCompile Include="..\source\ScoutManager.cpp" />
@@ -179,6 +182,21 @@
     <ClInclude Include="..\Source\Config.h" />
     <ClInclude Include="..\Source\Micro.h" />
     <ClInclude Include="..\Source\ParseUtils.h" />
+    <ClInclude Include="..\Source\Prediction\Defines.h" />
+    <ClInclude Include="..\Source\Prediction\enums_name_tables_tt.h" />
+    <ClInclude Include="..\Source\Prediction\ETechEstimator.h" />
+    <ClInclude Include="..\Source\Prediction\PrecompiledHeader.h" />
+    <ClInclude Include="..\Source\Prediction\serialized_tables.h" />
+    <ClInclude Include="..\Source\Prediction\Utils\CSingleton.h" />
+    <ClInclude Include="..\Source\Prediction\Utils\MinHeap.h" />
+    <ClInclude Include="..\Source\Prediction\Utils\Nearby.h" />
+    <ClInclude Include="..\Source\Prediction\Utils\QuadTree.h" />
+    <ClInclude Include="..\Source\Prediction\Utils\Rainbow.h" />
+    <ClInclude Include="..\Source\Prediction\Utils\RandomGenerators.h" />
+    <ClInclude Include="..\Source\Prediction\Utils\RectangleArray.h" />
+    <ClInclude Include="..\Source\Prediction\Utils\TimeManaged.h" />
+    <ClInclude Include="..\Source\Prediction\Utils\Util.h" />
+    <ClInclude Include="..\Source\Prediction\Utils\Vec.h" />
     <ClInclude Include="..\source\ProductionManager.h" />
     <ClInclude Include="..\source\RangedManager.h" />
     <ClInclude Include="..\source\ScoutManager.h" />
@@ -195,6 +213,10 @@
     <ClInclude Include="..\Source\UnitUtil.h" />
     <ClInclude Include="..\source\WorkerData.h" />
     <ClInclude Include="..\source\WorkerManager.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="UAlbertaBot.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

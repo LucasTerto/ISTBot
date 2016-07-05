@@ -334,11 +334,13 @@ struct tree_node
     std::map<int, tree_node*> children;
     void append(int v)
     {
-        children.insert(std::make_pair<int, tree_node*>(v, new tree_node(v)));
+		//children.insert(std::make_pair<int, tree_node*>(v, new tree_node(v)));
+		children.insert(std::make_pair(v, new tree_node(v)));
     }
     void append(tree_node* tn)
     {
-        children.insert(std::make_pair<int, tree_node*>(tn->value, tn));
+		//children.insert(std::make_pair<int, tree_node*>(tn->value, tn));
+		children.insert(std::make_pair(tn->value, tn));
     }
     tree_node(int v): value(v) {}
     tree_node(const char* p) : value(Protoss_Nexus) // root
