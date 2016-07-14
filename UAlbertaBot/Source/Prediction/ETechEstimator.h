@@ -75,7 +75,7 @@ Zerg openings, in order (in the vector):
 class ETechEstimator : public CSingleton<ETechEstimator>
 {
     friend class CSingleton<ETechEstimator>;
-    ETechEstimator();
+public : ETechEstimator();
     ~ETechEstimator();
 	serialized_tables st;
 	openings_knowing_player op_prior;
@@ -96,6 +96,7 @@ class ETechEstimator : public CSingleton<ETechEstimator>
 	std::vector<long double> computeVecDistribOpenings(int time);
     void computeDistribOpenings(int time);
 	//inline void useDistribOpenings(int time);
+	inline void useNewDistribOpenings(int time);
 	inline bool testBuildTreePossible(int indBuildTree,
 		const std::set<int>& setObs);
 public:

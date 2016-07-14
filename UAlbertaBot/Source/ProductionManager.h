@@ -6,6 +6,7 @@
 #include "StrategyManager.h"
 #include "BOSSManager.h"
 #include "BuildOrder.h"
+#include "Prediction\ETechEstimator.h"
 
 namespace UAlbertaBot
 {
@@ -16,6 +17,7 @@ class ProductionManager
     ProductionManager();
     
     BuildOrderQueue     _queue;
+	ETechEstimator      _estimator;
     BWAPI::TilePosition _predictedTilePosition;
     bool                _enemyCloakedDetected;
     bool                _assignedWorkerForThisBuilding;

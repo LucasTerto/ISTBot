@@ -1,4 +1,6 @@
 #include "ProductionManager.h"
+#include "Prediction\ETechEstimator.h"
+#include "Prediction\Utils\CSingleton.h"
 
 using namespace UAlbertaBot;
 
@@ -8,6 +10,7 @@ ProductionManager::ProductionManager()
 	, _enemyCloakedDetected          (false)
 {
 	// call estimator constructor
+	_estimator = ETechEstimator();
 	counterStrategy = false;
     setBuildOrder(StrategyManager::Instance().getOpeningBookBuildOrder());
 }
@@ -54,12 +57,18 @@ void ProductionManager::performBuildOrderSearch()
 }
 
 void ProductionManager::calculateNewStrategy(){
+
+	for each (BWAPI::Unit enemy_unit in BWAPI::Broodwar->enemy()->getUnits())
+	{
+		BWAPI::Unit* u;
+		*u = enemy_unit;
+		_estimator.onUnitShow(u);
+	}
 	//call etech estimator - 
 	// remake useDestributed openings
-		//check if new units seen
-			//if true - recalculate prediction
 	// if prediction was recalculated
-		//calculate new build order
+	//foreach enemy.getUnits -> EtechEstimator.OnUnitShow
+		//calculate new build order from within On unit Show
 
 }
 

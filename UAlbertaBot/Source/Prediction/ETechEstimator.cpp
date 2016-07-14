@@ -11,7 +11,7 @@
 #define MIN_PROB 0.00000000000000000001
 
 using namespace BWAPI;
-using namespace std;
+using namespace std;	
 
 int format_max_time(int t)
 {
@@ -270,9 +270,31 @@ void ETechEstimator::onUnitShow(Unit* u)
 		if (recomputeTime)
 		{
 			computeDistribOpenings(recomputeTime);
+			useNewDistribOpenings(__ETECHESTIMATOR_MINUTES__*60);
 			//useDistribOpenings(__ETECHESTIMATOR_MINUTES__*60);
 		}
 	}
+}
+
+void ETechEstimator::useNewDistribOpenings(int time)
+{
+
+	if (time + Broodwar->getFrameCount() / 24 >= LEARNED_TIME_LIMIT
+		|| Broodwar->self()->supplyUsed() < 42) // hack not to disturb the initial BO
+		return;
+	/// here we should now for sure the enemy's race as we have seen at least a building;
+	//Race enemyRace = Intelligence::Instance().enemyRace;
+	Race enemyRace = Broodwar->enemy()->getRace();
+
+	vector<long double> tmpOpProb(openingsProbas);
+	if (time > 0)
+		tmpOpProb = getOpeningsProbasIn(time);
+
+	size_t mostProbable = indMax(tmpOpProb);
+	set<size_t> fearThese = supTo(tmpOpProb, 0.201);
+	
+
+	//insert code relative to counters here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 }
 
 void ETechEstimator::onUnitHide(Unit* u)
