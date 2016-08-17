@@ -57,18 +57,31 @@ void ProductionManager::performBuildOrderSearch()
 }
 
 void ProductionManager::calculateNewStrategy(){
-
+	bool newPrediction = false;
 	for each (BWAPI::Unit enemy_unit in BWAPI::Broodwar->enemy()->getUnits())
 	{
 		BWAPI::Unit* u;
 		*u = enemy_unit;
 		_estimator.onUnitShow(u);
 	}
-	//call etech estimator - 
-	// remake useDestributed openings
-	// if prediction was recalculated
-	//foreach enemy.getUnits -> EtechEstimator.OnUnitShow
-		//calculate new build order from within On unit Show
+
+	if (newPrediction){
+		//get prediction vector = (indMax)
+		BWAPI::Race enemyRace = BWAPI::Broodwar->enemy()->getRace();
+		if (enemyRace == BWAPI::Races::Terran || !enemyRace.getName().compare("Terran")){
+			//calculate counters
+			//do it as the calculate new goal, basically i will push back the counters on the goals and let the planner do the rest
+		}
+		else if (enemyRace == BWAPI::Races::Protoss || !enemyRace.getName().compare("Protoss")){
+			//calculate counters
+		}
+		else if (enemyRace == BWAPI::Races::Zerg || !enemyRace.getName().compare("Zerg")){
+			//calculate counters
+		}
+		else{
+			//error
+		}
+	}
 
 }
 

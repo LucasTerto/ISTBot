@@ -104,7 +104,7 @@ public:
 	std::vector<long double> getOpeningsProbasIn(int time);
 	bool hasInfered;
 	void onUnitDestroy(BWAPI::Unit* u);
-	void onUnitShow(BWAPI::Unit* u);
+	bool onUnitShow(BWAPI::Unit* u);
 	void onUnitHide(BWAPI::Unit* u);
 #ifdef __ETECHESTIMATOR_DEBUG__
 	void onFrame();

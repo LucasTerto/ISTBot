@@ -206,11 +206,11 @@ void ETechEstimator::onUnitDestroy(Unit* u)
 {
 }
 
-void ETechEstimator::onUnitShow(Unit* u)
+bool ETechEstimator::onUnitShow(Unit* u)
 {
 	if (Broodwar->getFrameCount()/24 >= LEARNED_TIME_LIMIT
 		|| (*u)->getPlayer()->isNeutral())
-		return;
+		return false;
 
 	if ((*u)->getPlayer()->isEnemy(Broodwar->self())
 		&& !alreadySaw((*u)->getType()))
@@ -272,8 +272,10 @@ void ETechEstimator::onUnitShow(Unit* u)
 			computeDistribOpenings(recomputeTime);
 			useNewDistribOpenings(__ETECHESTIMATOR_MINUTES__*60);
 			//useDistribOpenings(__ETECHESTIMATOR_MINUTES__*60);
+			return true;
 		}
 	}
+	return false;
 }
 
 void ETechEstimator::useNewDistribOpenings(int time)
@@ -293,8 +295,15 @@ void ETechEstimator::useNewDistribOpenings(int time)
 	size_t mostProbable = indMax(tmpOpProb);
 	set<size_t> fearThese = supTo(tmpOpProb, 0.201);
 	
+	//discover how to save information
+		//enemy race data type - check in etech estimator
+		//build order data type
 
-	//insert code relative to counters here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	// change OnUnitSeen to return a bool, save prediction vector
+		//in prodmanager -> run OnUnitSeen, then run prediction counters
+	//if enemy_race = x
+		//search specific counter
+		//add to build order
 }
 
 void ETechEstimator::onUnitHide(Unit* u)
