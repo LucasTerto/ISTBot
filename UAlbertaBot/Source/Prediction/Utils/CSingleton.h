@@ -50,7 +50,7 @@ private :
     // Copy forbiden
     //----------------------------------------------------------------
     CSingleton(CSingleton&);
-    void operator =(CSingleton&);
+    //void operator =(CSingleton&); //WHY FORBIDDEN???????? LUCAS
 };
 
 //----------------------------------------------------------------

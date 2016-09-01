@@ -58,11 +58,19 @@ void ProductionManager::performBuildOrderSearch()
 
 void ProductionManager::calculateNewStrategy(){
 	bool newPrediction = false;
+	std::set<size_t> prediction, *updatedPrediction = NULL;
+
 	for each (BWAPI::Unit enemy_unit in BWAPI::Broodwar->enemy()->getUnits())
 	{
+		//pode ser problematico....... LUCAS
 		BWAPI::Unit* u;
 		*u = enemy_unit;
-		_estimator.onUnitShow(u);
+		
+		updatedPrediction = _estimator.onUnitShow(u);
+		if (updatedPrediction != NULL){
+			prediction = *updatedPrediction;
+			newPrediction = true;
+		}
 	}
 
 	if (newPrediction){
@@ -70,13 +78,16 @@ void ProductionManager::calculateNewStrategy(){
 		BWAPI::Race enemyRace = BWAPI::Broodwar->enemy()->getRace();
 		if (enemyRace == BWAPI::Races::Terran || !enemyRace.getName().compare("Terran")){
 			//calculate counters
+			CounterTerran(prediction);
 			//do it as the calculate new goal, basically i will push back the counters on the goals and let the planner do the rest
 		}
 		else if (enemyRace == BWAPI::Races::Protoss || !enemyRace.getName().compare("Protoss")){
 			//calculate counters
+			CounterProtoss(prediction);
 		}
 		else if (enemyRace == BWAPI::Races::Zerg || !enemyRace.getName().compare("Zerg")){
 			//calculate counters
+			CounterZerg(prediction);
 		}
 		else{
 			//error
@@ -85,6 +96,18 @@ void ProductionManager::calculateNewStrategy(){
 
 }
 
+void ProductionManager::CounterTerran(std::set<size_t> prediction){
+	//check how to read the vector
+	//clean goals
+	//add to goal list the counters
+}
+
+void ProductionManager::CounterProtoss(std::set<size_t> prediction){
+
+}
+void ProductionManager::CounterZerg(std::set<size_t> prediction){
+
+}
 void ProductionManager::update() 
 {
 	// check the _queue for stuff we can build

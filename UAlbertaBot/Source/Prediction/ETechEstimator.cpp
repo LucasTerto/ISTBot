@@ -206,11 +206,11 @@ void ETechEstimator::onUnitDestroy(Unit* u)
 {
 }
 
-bool ETechEstimator::onUnitShow(Unit* u)
+set<size_t>* ETechEstimator::onUnitShow(Unit* u)
 {
 	if (Broodwar->getFrameCount()/24 >= LEARNED_TIME_LIMIT
 		|| (*u)->getPlayer()->isNeutral())
-		return false;
+		return NULL;
 
 	if ((*u)->getPlayer()->isEnemy(Broodwar->self())
 		&& !alreadySaw((*u)->getType()))
@@ -270,20 +270,19 @@ bool ETechEstimator::onUnitShow(Unit* u)
 		if (recomputeTime)
 		{
 			computeDistribOpenings(recomputeTime);
-			useNewDistribOpenings(__ETECHESTIMATOR_MINUTES__*60);
+			return useNewDistribOpenings(__ETECHESTIMATOR_MINUTES__ * 60);
 			//useDistribOpenings(__ETECHESTIMATOR_MINUTES__*60);
-			return true;
 		}
 	}
-	return false;
+	return NULL;
 }
 
-void ETechEstimator::useNewDistribOpenings(int time)
+set<size_t>* ETechEstimator::useNewDistribOpenings(int time)
 {
-
+	
 	if (time + Broodwar->getFrameCount() / 24 >= LEARNED_TIME_LIMIT
 		|| Broodwar->self()->supplyUsed() < 42) // hack not to disturb the initial BO
-		return;
+		return NULL;
 	/// here we should now for sure the enemy's race as we have seen at least a building;
 	//Race enemyRace = Intelligence::Instance().enemyRace;
 	Race enemyRace = Broodwar->enemy()->getRace();
@@ -294,7 +293,11 @@ void ETechEstimator::useNewDistribOpenings(int time)
 
 	size_t mostProbable = indMax(tmpOpProb);
 	set<size_t> fearThese = supTo(tmpOpProb, 0.201);
+	set<size_t>* prediction;
+
+	*prediction = fearThese;
 	
+	return prediction;
 	//discover how to save information
 		//enemy race data type - check in etech estimator
 		//build order data type

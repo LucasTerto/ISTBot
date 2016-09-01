@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Common.h>
+#include <set>
 #include "BuildOrderQueue.h"
 #include "BuildingManager.h"
 #include "StrategyManager.h"
@@ -23,6 +24,9 @@ class ProductionManager
     bool                _assignedWorkerForThisBuilding;
     bool                _haveLocationForThisBuilding;
 	bool				counterStrategy;
+	void				CounterTerran(std::set<size_t> prediction);
+	void				CounterProtoss(std::set<size_t> prediction);
+	void				CounterZerg(std::set<size_t> prediction);
     
     BWAPI::Unit         getClosestUnitToPosition(const BWAPI::Unitset & units,BWAPI::Position closestTo);
     BWAPI::Unit         selectUnitOfType(BWAPI::UnitType type,BWAPI::Position closestTo = BWAPI::Position(0,0));

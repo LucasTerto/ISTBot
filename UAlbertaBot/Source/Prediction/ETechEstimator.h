@@ -96,7 +96,7 @@ public : ETechEstimator();
 	std::vector<long double> computeVecDistribOpenings(int time);
     void computeDistribOpenings(int time);
 	//inline void useDistribOpenings(int time);
-	inline void useNewDistribOpenings(int time);
+	inline std::set<size_t>* useNewDistribOpenings(int time);
 	inline bool testBuildTreePossible(int indBuildTree,
 		const std::set<int>& setObs);
 public:
@@ -104,7 +104,7 @@ public:
 	std::vector<long double> getOpeningsProbasIn(int time);
 	bool hasInfered;
 	void onUnitDestroy(BWAPI::Unit* u);
-	bool onUnitShow(BWAPI::Unit* u);
+	std::set<size_t>* onUnitShow(BWAPI::Unit* u);
 	void onUnitHide(BWAPI::Unit* u);
 #ifdef __ETECHESTIMATOR_DEBUG__
 	void onFrame();
