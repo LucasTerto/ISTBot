@@ -1,6 +1,7 @@
 #include "ProductionManager.h"
 #include "Prediction\ETechEstimator.h"
 #include "Prediction\Utils\CSingleton.h"
+#include "UnitUtil.h"
 
 using namespace UAlbertaBot;
 
@@ -97,16 +98,175 @@ void ProductionManager::calculateNewStrategy(){
 }
 
 void ProductionManager::CounterTerran(std::set<size_t> prediction){
-	//check how to read the vector
-	//clean goals
-	//add to goal list the counters
+	prediction.count(0);
+	std::vector<MetaPair> goal;
+	int currentUnits = 0;
+	for (unsigned int i = 0; i < prediction.size(); i++){
+		if (false) { // check for SCU
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Mutalisk);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Mutalisk, prediction.count(i) + currentUnits));
+		}
+		else if (false){// check for Marine
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Lurker);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Lurker, prediction.count(i) + currentUnits));
+		}
+		else if (false){// Firebat
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Hydralisk);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Hydralisk, prediction.count(i) + currentUnits));
+		}
+		else if (false){//Medic
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Broodling);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Broodling, prediction.count(i) + currentUnits));
+		}
+		else if (false){//Ghost
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Overlord);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Overlord, prediction.count(i) + currentUnits));
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Spore_Colony);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Spore_Colony, prediction.count(i) + currentUnits));
+		}
+		else if (false){//Vulture
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Guardian);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Guardian, prediction.count(i) + currentUnits));
+		}
+		else if (false){//Siege Tank
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Mutalisk);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Mutalisk, prediction.count(i) + currentUnits));
+		}
+		else if (false){//Goliath
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Mutalisk);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Mutalisk, prediction.count(i) + currentUnits));
+		}
+		else if (false){//wraith
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Devourer);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Devourer, prediction.count(i) + currentUnits));
+		}
+		else if (false){//Valkyrie
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Scourge);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Scourge, prediction.count(i) + currentUnits));
+		}
+		else if (false){//Science Vessels
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Scourge);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Scourge, prediction.count(i) + currentUnits));
+		}
+		else if (false){//Battle Cruiser
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Mutalisk);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Mutalisk, prediction.count(i) + currentUnits));
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Defiler);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Defiler, prediction.count(i) + currentUnits));
+		}
+	}
 }
 
 void ProductionManager::CounterProtoss(std::set<size_t> prediction){
-
+	prediction.count(0);
+	std::vector<MetaPair> goal;
+	int currentUnits = 0;
+	for (unsigned int i = 0; i < prediction.size(); i++){
+		if (false) { // check for probes
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Zergling);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Zergling, prediction.count(i) + currentUnits));
+		}
+		else if (false){// check for Zealot
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Zergling);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Zergling, (prediction.count(i) * 4) + currentUnits));
+		}
+		else if (false){// dragoon
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Mutalisk);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Mutalisk, prediction.count(i) + currentUnits));
+		}
+		else if (false){//high templar
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Ultralisk);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Ultralisk, prediction.count(i) + currentUnits));
+		}
+		else if (false){//dark templar
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Overlord);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Overlord, prediction.count(i) + currentUnits));
+		}
+		else if (false){//archon
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Hydralisk);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Hydralisk, prediction.count(i) + currentUnits));
+		}
+		else if (false){//Dark archon
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Hydralisk);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Hydralisk, prediction.count(i) + currentUnits));
+		}
+		else if (false){//reaver
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Mutalisk);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Mutalisk, prediction.count(i) + currentUnits));
+		}
+		else if (false){//scout
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Mutalisk);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Mutalisk, prediction.count(i) + currentUnits));
+		}
+		else if (false){//corsair
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Devourer);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Devourer, prediction.count(i) + currentUnits));
+		}
+		else if (false){//carrier
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Scourge);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Scourge, prediction.count(i) + currentUnits));
+		}
+		else if (false){//Arbiter
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Scourge);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Scourge, prediction.count(i) + currentUnits));
+		}
+		else if (false){//Shuttle
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Scourge);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Scourge, prediction.count(i) + currentUnits));
+		}
+	}
 }
-void ProductionManager::CounterZerg(std::set<size_t> prediction){
 
+void ProductionManager::CounterZerg(std::set<size_t> prediction){
+	prediction.count(0);
+	std::vector<MetaPair> goal;
+	int currentUnits = 0;
+	for (unsigned int i = 0; i < prediction.size(); i++){
+		if (false) { // check for Drone
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Mutalisk);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Mutalisk, prediction.count(i) + currentUnits));
+		}
+		else if (false){// check for Infest Terran
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Guardian);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Guardian, prediction.count(i) + currentUnits));
+		}
+		else if (false){// Zerglings
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Zergling);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Zergling, prediction.count(i) + currentUnits));
+		}
+		else if (false){//Overlord
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Mutalisk);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Mutalisk, prediction.count(i) + currentUnits));
+		}
+		else if (false){//hydralisks
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Zergling);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Zergling, (prediction.count(i) *2) + currentUnits));
+		}
+		else if (false){//ultralisks
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Defiler);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Defiler, prediction.count(i) + currentUnits));
+		}
+		else if (false){//Lurker
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Ultralisk);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Ultralisk, prediction.count(i) + currentUnits));
+		}
+		else if (false){//Mutalisk
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Ultralisk);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Ultralisk, prediction.count(i) + currentUnits));
+		}
+		else if (false){//devourer
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Ultralisk);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Ultralisk, prediction.count(i) + currentUnits));
+		}
+		else if (false){//guardian
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Hydralisk);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Hydralisk, prediction.count(i) + currentUnits));
+		}
+		else if (false){//Scourge
+			currentUnits = UnitUtil::GetAllUnitCount(BWAPI::UnitTypes::Zerg_Scourge);
+			goal.push_back(std::pair<MetaType, int>(BWAPI::UnitTypes::Zerg_Scourge, prediction.count(i) + currentUnits));
+		}
+	}
 }
 void ProductionManager::update() 
 {
