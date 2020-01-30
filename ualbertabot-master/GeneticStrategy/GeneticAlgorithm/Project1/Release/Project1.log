@@ -1,0 +1,812 @@
+﻿  GeneticAlgorithm.cpp
+  Note: including file: d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/GeneticAlgorithm.hpp
+  Note: including file:  d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Hash.hpp
+  Note: including file:   D:\Programs\BWAPI\include\BWAPI.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/InterfaceEvent.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\functional
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xfunctional
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstdlib
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\yvals.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xkeycheck.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\sal.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ConcurrencySal.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\vadefs.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\use_ansi.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\limits.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xstring
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xmemory0
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\limits
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ymath.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cfloat
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\float.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtwrn.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\climits
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cmath
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\math.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xtgmath.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xtr1common
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cwchar
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\wchar.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\swprintf.inl
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\wtime.inl
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xstddef
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstddef
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stddef.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\initializer_list
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\new
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\exception
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\eh.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\malloc.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xutility
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\utility
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\iosfwd
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstdio
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstring
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdbg.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\type_traits
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xrefwrap
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xatomic0.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\intrin.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\setjmp.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\immintrin.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\wmmintrin.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\nmmintrin.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\smmintrin.h
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\tmmintrin.h
+  Note: including file:               C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\pmmintrin.h
+  Note: including file:                C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\emmintrin.h
+  Note: including file:                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xmmintrin.h
+  Note: including file:                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\mmintrin.h
+  Note: including file:                   C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ammintrin.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\mm3dnow.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\typeinfo
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\tuple
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Interface.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\map
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xtree
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xmemory
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdexcept
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\list
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/AIModule.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/Position.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\algorithm
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\deque
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\iostream
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\istream
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ostream
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ios
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocnum
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\streambuf
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xiosbase
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocale
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocinfo
+  Note: including file:               C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocinfo.h
+  Note: including file:                C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ctype.h
+  Note: including file:                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:                C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\locale.h
+  Note: including file:                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xdebug
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xfacet
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\system_error
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cerrno
+  Note: including file:               C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h
+  Note: including file:                C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\share.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/TournamentAction.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/Unit.h
+  Note: including file:      D:\Programs\BWAPI\include\BWAPI/PositionUnit.h
+  Note: including file:      D:\Programs\BWAPI\include\BWAPI/UnitType.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/Type.h
+  Note: including file:        D:\Programs\BWAPI\include\BWAPI/SetContainer.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\unordered_set
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xhash
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\vector
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\set
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\iterator
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cctype
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\unordered_map
+  Note: including file:      D:\Programs\BWAPI\include\BWAPI/Filters.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/UnaryFilter.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/ComparisonFilter.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/BestFilter.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/UnitSizeType.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/UpgradeType.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/WeaponType.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/Order.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/Race.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Bullet.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Bulletset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/BulletType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Color.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Constants.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/CoordinateType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/DamageType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Error.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Event.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/EventType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/ExplosionType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Flag.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Force.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Forceset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Game.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstdarg
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdarg.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/Input.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\sstream
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/GameType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Latency.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Player.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Playerset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/PlayerType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Region.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Regionset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/TechType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/UnitCommand.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/UnitCommandType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Unitset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/WindowsTypes.h
+  Note: including file:  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ctime
+  Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.h
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.inl
+  Note: including file:  d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Randomize.hpp
+  Note: including file:   d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Galgo.hpp
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\iomanip
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocmon
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xloctime
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\memory
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdint.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\numeric
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\random
+  Note: including file:  d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\EnemyHash.hpp
+  Note: including file:   d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\ProtossHash.hpp
+  Note: including file:   d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\TerranHash.hpp
+  Note: including file:   d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\ZergHash.hpp
+  Note: including file:  d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Individual.hpp
+  Note: including file: d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Population.hpp
+  Note: including file: d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(24): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(29): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(33): warning C4244: '-=' : conversion from 'float' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(69): warning C4244: '+=' : conversion from 'float' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(95): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(130): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(133): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(141): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(196): warning C4305: '=' : truncation from 'double' to 'float'
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(201): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(210): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(212): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(217): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(226): warning C4244: '-=' : conversion from 'float' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(345): warning C4018: '<' : signed/unsigned mismatch
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(359): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+..\src\GeneticAlgorithm.cpp(43): warning C4018: '<' : signed/unsigned mismatch
+..\src\GeneticAlgorithm.cpp(125): warning C4018: '<' : signed/unsigned mismatch
+..\src\GeneticAlgorithm.cpp(159): warning C4018: '<' : signed/unsigned mismatch
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Randomize.hpp(34): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+          d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(29) : see reference to function template instantiation 'T galgo::uniform<int>(T,T)' being compiled
+          with
+          [
+              T=int
+          ]
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Randomize.hpp(34): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+          d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(55) : see reference to function template instantiation 'T galgo::uniform<float>(T,T)' being compiled
+          with
+          [
+              T=float
+          ]
+  Individual.cpp
+  Note: including file: d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Individual.hpp
+  Note: including file:  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\memory
+  Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xmemory
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xmemory0
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstdlib
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\yvals.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xkeycheck.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\sal.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ConcurrencySal.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\vadefs.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\use_ansi.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\limits.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\limits
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ymath.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cfloat
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\float.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtwrn.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\climits
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cmath
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\math.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xtgmath.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xtr1common
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cwchar
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\wchar.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\swprintf.inl
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\wtime.inl
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xstddef
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstddef
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stddef.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\initializer_list
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\new
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\exception
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\eh.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\malloc.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xutility
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\utility
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\iosfwd
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstdio
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstring
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdbg.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\type_traits
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xrefwrap
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xatomic0.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\intrin.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\setjmp.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\immintrin.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\wmmintrin.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\nmmintrin.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\smmintrin.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\tmmintrin.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\pmmintrin.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\emmintrin.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xmmintrin.h
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\mmintrin.h
+  Note: including file:               C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ammintrin.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\mm3dnow.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdint.h
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\typeinfo
+  Note: including file:  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\iostream
+  Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\istream
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ostream
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ios
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocnum
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\streambuf
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xiosbase
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocale
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdexcept
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xstring
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocinfo
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocinfo.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ctype.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\locale.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xdebug
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xfacet
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\system_error
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cerrno
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\share.h
+  Note: including file:  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\vector
+  Note: including file:  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\map
+  Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xtree
+  Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\tuple
+  Note: including file: C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\bitset
+  Note: including file:  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string
+  Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\iterator
+  Note: including file: d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/GeneticAlgorithm.hpp
+  Note: including file:  d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Hash.hpp
+  Note: including file:   D:\Programs\BWAPI\include\BWAPI.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/InterfaceEvent.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\functional
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xfunctional
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Interface.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\list
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/AIModule.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/Position.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\algorithm
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\deque
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/TournamentAction.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/Unit.h
+  Note: including file:      D:\Programs\BWAPI\include\BWAPI/PositionUnit.h
+  Note: including file:      D:\Programs\BWAPI\include\BWAPI/UnitType.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/Type.h
+  Note: including file:        D:\Programs\BWAPI\include\BWAPI/SetContainer.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\unordered_set
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xhash
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\set
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cctype
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\unordered_map
+  Note: including file:      D:\Programs\BWAPI\include\BWAPI/Filters.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/UnaryFilter.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/ComparisonFilter.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/BestFilter.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/UnitSizeType.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/UpgradeType.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/WeaponType.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/Order.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/Race.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Bullet.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Bulletset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/BulletType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Color.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Constants.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/CoordinateType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/DamageType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Error.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Event.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/EventType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/ExplosionType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Flag.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Force.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Forceset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Game.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstdarg
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdarg.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/Input.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\sstream
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/GameType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Latency.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Player.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Playerset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/PlayerType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Region.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Regionset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/TechType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/UnitCommand.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/UnitCommandType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Unitset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/WindowsTypes.h
+  Note: including file:  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ctime
+  Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.h
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.inl
+  Note: including file:  d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Randomize.hpp
+  Note: including file:   d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Galgo.hpp
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\iomanip
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocmon
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xloctime
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\numeric
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\random
+  Note: including file:  d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\EnemyHash.hpp
+  Note: including file:   d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\ProtossHash.hpp
+  Note: including file:   d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\TerranHash.hpp
+  Note: including file:   d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\ZergHash.hpp
+..\src\Individual.cpp(78): warning C4018: '<' : signed/unsigned mismatch
+..\src\Individual.cpp(90): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+..\src\Individual.cpp(97): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+..\src\Individual.cpp(160): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+..\src\Individual.cpp(183): warning C4018: '>' : signed/unsigned mismatch
+..\src\Individual.cpp(193): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+  Population.cpp
+  Note: including file: d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Population.hpp
+  Note: including file:  d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Individual.hpp
+  Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\memory
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xmemory
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xmemory0
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstdlib
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\yvals.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xkeycheck.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\sal.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ConcurrencySal.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\vadefs.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\use_ansi.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\limits.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\limits
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ymath.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cfloat
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\float.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtwrn.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\climits
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cmath
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\math.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xtgmath.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xtr1common
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cwchar
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\wchar.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\swprintf.inl
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\wtime.inl
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xstddef
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstddef
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stddef.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\initializer_list
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\new
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\exception
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\eh.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\malloc.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xutility
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\utility
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\iosfwd
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstdio
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstring
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdbg.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\type_traits
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xrefwrap
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xatomic0.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\intrin.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\setjmp.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\immintrin.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\wmmintrin.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\nmmintrin.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\smmintrin.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\tmmintrin.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\pmmintrin.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\emmintrin.h
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xmmintrin.h
+  Note: including file:               C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\mmintrin.h
+  Note: including file:                C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ammintrin.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\mm3dnow.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdint.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\typeinfo
+  Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\iostream
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\istream
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ostream
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ios
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocnum
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\streambuf
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xiosbase
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocale
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdexcept
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xstring
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocinfo
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocinfo.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ctype.h
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\locale.h
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xdebug
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xfacet
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\system_error
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cerrno
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\share.h
+  Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\vector
+  Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\map
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xtree
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\tuple
+  Note: including file: d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/GeneticAlgorithm.hpp
+  Note: including file:  d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Hash.hpp
+  Note: including file:   D:\Programs\BWAPI\include\BWAPI.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/InterfaceEvent.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\functional
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xfunctional
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Interface.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\list
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/AIModule.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/Position.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\algorithm
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\deque
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/TournamentAction.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/Unit.h
+  Note: including file:      D:\Programs\BWAPI\include\BWAPI/PositionUnit.h
+  Note: including file:      D:\Programs\BWAPI\include\BWAPI/UnitType.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/Type.h
+  Note: including file:        D:\Programs\BWAPI\include\BWAPI/SetContainer.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\unordered_set
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xhash
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\set
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\iterator
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cctype
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\unordered_map
+  Note: including file:      D:\Programs\BWAPI\include\BWAPI/Filters.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/UnaryFilter.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/ComparisonFilter.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/BestFilter.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/UnitSizeType.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/UpgradeType.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/WeaponType.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/Order.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/Race.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Bullet.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Bulletset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/BulletType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Color.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Constants.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/CoordinateType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/DamageType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Error.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Event.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/EventType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/ExplosionType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Flag.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Force.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Forceset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Game.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstdarg
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdarg.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/Input.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\sstream
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/GameType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Latency.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Player.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Playerset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/PlayerType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Region.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Regionset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/TechType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/UnitCommand.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/UnitCommandType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Unitset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/WindowsTypes.h
+  Note: including file:  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ctime
+  Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.h
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.inl
+  Note: including file:  d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Randomize.hpp
+  Note: including file:   d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Galgo.hpp
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\iomanip
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocmon
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xloctime
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\numeric
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\random
+  Note: including file:  d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\EnemyHash.hpp
+  Note: including file:   d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\ProtossHash.hpp
+  Note: including file:   d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\TerranHash.hpp
+  Note: including file:   d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\ZergHash.hpp
+..\src\Population.cpp(19): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+..\src\Population.cpp(32): warning C4018: '<' : signed/unsigned mismatch
+..\src\Population.cpp(33): warning C4244: '+=' : conversion from 'float' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Randomize.hpp(34): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+          ..\src\Population.cpp(144) : see reference to function template instantiation 'T galgo::uniform<int>(T,T)' being compiled
+          with
+          [
+              T=int
+          ]
+  example.cpp
+  Note: including file: d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/GeneticAlgorithm.hpp
+  Note: including file:  d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Hash.hpp
+  Note: including file:   D:\Programs\BWAPI\include\BWAPI.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/InterfaceEvent.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\functional
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xfunctional
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstdlib
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\yvals.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xkeycheck.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\sal.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ConcurrencySal.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\vadefs.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\use_ansi.h
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdlib.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\limits.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xstring
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xmemory0
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\limits
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ymath.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cfloat
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\float.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtwrn.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\climits
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cmath
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\math.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xtgmath.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xtr1common
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cwchar
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\wchar.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\swprintf.inl
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\wtime.inl
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xstddef
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstddef
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stddef.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\initializer_list
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\new
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\exception
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\eh.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\malloc.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xutility
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\utility
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\iosfwd
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstdio
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdio.h
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstring
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdbg.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\type_traits
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xrefwrap
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xatomic0.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\intrin.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\setjmp.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\immintrin.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\wmmintrin.h
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\nmmintrin.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\smmintrin.h
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\tmmintrin.h
+  Note: including file:               C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\pmmintrin.h
+  Note: including file:                C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\emmintrin.h
+  Note: including file:                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xmmintrin.h
+  Note: including file:                  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\mmintrin.h
+  Note: including file:                   C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ammintrin.h
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\mm3dnow.h
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\typeinfo
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\tuple
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Interface.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\map
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xtree
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xmemory
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdexcept
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\list
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/AIModule.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/Position.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\algorithm
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\deque
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\iostream
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\istream
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ostream
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ios
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocnum
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\streambuf
+  Note: including file:            C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xiosbase
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocale
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocinfo
+  Note: including file:               C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocinfo.h
+  Note: including file:                C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ctype.h
+  Note: including file:                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:                C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\locale.h
+  Note: including file:                 C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xdebug
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xfacet
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\system_error
+  Note: including file:              C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cerrno
+  Note: including file:               C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\errno.h
+  Note: including file:                C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:             C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\share.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/TournamentAction.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/Unit.h
+  Note: including file:      D:\Programs\BWAPI\include\BWAPI/PositionUnit.h
+  Note: including file:      D:\Programs\BWAPI\include\BWAPI/UnitType.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/Type.h
+  Note: including file:        D:\Programs\BWAPI\include\BWAPI/SetContainer.h
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\unordered_set
+  Note: including file:          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xhash
+  Note: including file:           C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\vector
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\set
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\string
+  Note: including file:         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\iterator
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cctype
+  Note: including file:        C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\unordered_map
+  Note: including file:      D:\Programs\BWAPI\include\BWAPI/Filters.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/UnaryFilter.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/ComparisonFilter.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/BestFilter.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/UnitSizeType.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/UpgradeType.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/WeaponType.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/Order.h
+  Note: including file:       D:\Programs\BWAPI\include\BWAPI/Race.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Bullet.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Bulletset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/BulletType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Color.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Constants.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/CoordinateType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/DamageType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Error.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Event.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/EventType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/ExplosionType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Flag.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Force.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Forceset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Game.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\cstdarg
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdarg.h
+  Note: including file:       C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/Input.h
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\sstream
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/GameType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Latency.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Player.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Playerset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/PlayerType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Region.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Regionset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/TechType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/UnitCommand.h
+  Note: including file:     D:\Programs\BWAPI\include\BWAPI/UnitCommandType.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/Unitset.h
+  Note: including file:    D:\Programs\BWAPI\include\BWAPI/WindowsTypes.h
+  Note: including file:  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\ctime
+  Note: including file:   C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.h
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\time.inl
+  Note: including file:  d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Randomize.hpp
+  Note: including file:   d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Galgo.hpp
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\iomanip
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xlocmon
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\xloctime
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\memory
+  Note: including file:     C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\stdint.h
+  Note: including file:      C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\crtdefs.h
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\numeric
+  Note: including file:    C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\random
+  Note: including file:  d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\EnemyHash.hpp
+  Note: including file:   d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\ProtossHash.hpp
+  Note: including file:   d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\TerranHash.hpp
+  Note: including file:   d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\ZergHash.hpp
+  Note: including file:  d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Individual.hpp
+Individual.obj : warning LNK4006: "class std::uniform_real_distribution<double> galgo::proba" (?proba@galgo@@3V?$uniform_real_distribution@N@std@@A) already defined in Population.obj; second definition ignored
+Individual.obj : warning LNK4006: "class std::random_device galgo::rand_dev" (?rand_dev@galgo@@3Vrandom_device@std@@A) already defined in Population.obj; second definition ignored
+Individual.obj : warning LNK4006: "class std::mersenne_twister_engine<unsigned __int64,64,312,156,31,-5403634167711393303,29,6148914691236517205,17,8202884508482404352,37,-2270628950310912,43,6364136223846793005> galgo::rng" (?rng@galgo@@3V?$mersenne_twister_engine@_K$0EA@$0BDI@$0JM@$0BP@$0?EKPNJAKFFGJJOGBH@$0BN@$0FFFFFFFFFFFFFFFF@$0BB@$0HBNGHPPPONKGAAAA@$0CF@$0?IBBCAAAAAAAAA@$0CL@$0FIFBPECNEMJFHPCN@@std@@A) already defined in Population.obj; second definition ignored
+GeneticAlgorithm.obj : warning LNK4006: "class std::uniform_real_distribution<double> galgo::proba" (?proba@galgo@@3V?$uniform_real_distribution@N@std@@A) already defined in Population.obj; second definition ignored
+GeneticAlgorithm.obj : warning LNK4006: "class std::random_device galgo::rand_dev" (?rand_dev@galgo@@3Vrandom_device@std@@A) already defined in Population.obj; second definition ignored
+GeneticAlgorithm.obj : warning LNK4006: "class std::mersenne_twister_engine<unsigned __int64,64,312,156,31,-5403634167711393303,29,6148914691236517205,17,8202884508482404352,37,-2270628950310912,43,6364136223846793005> galgo::rng" (?rng@galgo@@3V?$mersenne_twister_engine@_K$0EA@$0BDI@$0JM@$0BP@$0?EKPNJAKFFGJJOGBH@$0BN@$0FFFFFFFFFFFFFFFF@$0BB@$0HBNGHPPPONKGAAAA@$0CF@$0?IBBCAAAAAAAAA@$0CL@$0FIFBPECNEMJFHPCN@@std@@A) already defined in Population.obj; second definition ignored
+example.obj : warning LNK4006: "class std::uniform_real_distribution<double> galgo::proba" (?proba@galgo@@3V?$uniform_real_distribution@N@std@@A) already defined in Population.obj; second definition ignored
+example.obj : warning LNK4006: "class std::random_device galgo::rand_dev" (?rand_dev@galgo@@3Vrandom_device@std@@A) already defined in Population.obj; second definition ignored
+example.obj : warning LNK4006: "class std::mersenne_twister_engine<unsigned __int64,64,312,156,31,-5403634167711393303,29,6148914691236517205,17,8202884508482404352,37,-2270628950310912,43,6364136223846793005> galgo::rng" (?rng@galgo@@3V?$mersenne_twister_engine@_K$0EA@$0BDI@$0JM@$0BP@$0?EKPNJAKFFGJJOGBH@$0BN@$0FFFFFFFFFFFFFFFF@$0BB@$0HBNGHPPPONKGAAAA@$0CF@$0?IBBCAAAAAAAAA@$0CL@$0FIFBPECNEMJFHPCN@@std@@A) already defined in Population.obj; second definition ignored
+  Project1.vcxproj -> D:\Estudo\Tese_Dissertation\ualbertabot-master\UAlbertaBot\VisualStudio\Release\GeneticStrategy.lib

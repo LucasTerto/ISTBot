@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\GeneticAlgorithm.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Individual.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Population.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\example.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\header\EnemyHash.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\header\Evolution.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\header\Galgo.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\header\GeneticAlgorithm.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\header\Hash.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\header\Individual.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\header\Population.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\header\ProtossHash.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\header\Randomize.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\header\TerranHash.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+    <ClInclude Include="..\header\ZergHash.hpp">
+      <Filter>header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="header">
+      <UniqueIdentifier>{c66bcfc0-e6fe-432b-8c13-4d3fb262e120}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{56f41493-c947-4fae-9475-70e16c3ff506}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

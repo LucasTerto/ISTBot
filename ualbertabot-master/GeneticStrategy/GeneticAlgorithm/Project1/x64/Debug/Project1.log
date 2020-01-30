@@ -1,0 +1,54 @@
+﻿cl : Command line warning D9038: /ZI is not supported on this platform; enabling /Zi instead
+cl : Command line warning D9007: '/Gm' requires '/Zi'; option ignored
+  GeneticAlgorithm.cpp
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(25): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(30): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(39): warning C4244: '-=' : conversion from 'float' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(75): warning C4244: '+=' : conversion from 'float' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(101): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(136): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(139): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(147): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(202): warning C4305: '=' : truncation from 'double' to 'float'
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(207): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(216): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(218): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(223): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(232): warning C4244: '-=' : conversion from 'float' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(365): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+..\src\GeneticAlgorithm.cpp(22): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+..\src\GeneticAlgorithm.cpp(33): warning C4804: '>' : unsafe use of type 'bool' in operation
+..\src\GeneticAlgorithm.cpp(85): warning C4804: '>' : unsafe use of type 'bool' in operation
+..\src\GeneticAlgorithm.cpp(96): warning C4804: '>' : unsafe use of type 'bool' in operation
+..\src\GeneticAlgorithm.cpp(106): warning C4804: '>' : unsafe use of type 'bool' in operation
+..\src\GeneticAlgorithm.cpp(150): warning C4804: '>' : unsafe use of type 'bool' in operation
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Randomize.hpp(34): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+          d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(30) : see reference to function template instantiation 'T `anonymous-namespace'::uniform<int>(T,T)' being compiled
+          with
+          [
+              T=int
+          ]
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\header\Randomize.hpp(34): warning C4244: 'return' : conversion from 'double' to 'float', possible loss of data
+          d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Evolution.hpp(61) : see reference to function template instantiation 'T `anonymous-namespace'::uniform<float>(T,T)' being compiled
+          with
+          [
+              T=float
+          ]
+  Individual.cpp
+..\src\Individual.cpp(87): warning C4244: 'initializing' : conversion from 'int' to 'float', possible loss of data
+..\src\Individual.cpp(89): warning C4244: 'return' : conversion from 'float' to 'int', possible loss of data
+..\src\Individual.cpp(97): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+..\src\Individual.cpp(152): warning C4267: 'return' : conversion from 'size_t' to 'int', possible loss of data
+..\src\Individual.cpp(160): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+..\src\Individual.cpp(193): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+  Population.cpp
+..\src\Population.cpp(19): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+..\src\Population.cpp(33): warning C4244: '+=' : conversion from 'float' to 'int', possible loss of data
+d:\estudo\tese_dissertation\ualbertabot-master\geneticstrategy\geneticalgorithm\src\../header/Randomize.hpp(34): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+          ..\src\Population.cpp(152) : see reference to function template instantiation 'T `anonymous-namespace'::uniform<int>(T,T)' being compiled
+          with
+          [
+              T=int
+          ]
+  Generating Code...
+BWAPId.lib(WeaponType.obj) : fatal error LNK1112: module machine type 'X86' conflicts with target machine type 'x64'
